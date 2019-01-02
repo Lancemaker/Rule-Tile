@@ -154,11 +154,11 @@ namespace UnityEditor
                     spritelist = Array.ConvertAll(data, item=>item as Sprite);
                     RuleTile ruletile = new RuleTile();
                     AssetDatabase.CreateAsset(ruletile, "Assets/"+tile.name+"_"+(++count)+".asset");   
-                    Debug.Log(path);
+                   
                     for(int i=0 ; i<tile.m_TilingRules.Count ; i++){     
                         RuleTile.TilingRule rule = new RuleTile.TilingRule();
                         rule.m_Output = tile.m_TilingRules[i].m_Output;
-                        rule.m_Sprites[0] = spritelist[i];
+                        rule.m_Sprites[0] = spritelist[i+1];
                         rule.m_GameObject = tile.m_DefaultGameObject;
                         rule.m_ColliderType = tile.m_DefaultColliderType;  
                         for (int j = 0; j < tile.m_TilingRules[i].m_Neighbors.Length; j++)
